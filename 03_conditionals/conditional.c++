@@ -8,13 +8,13 @@ int main(){
     // }else{
     //     cout<<"n is positive"<<endl;
     // }
-    // int a,b;
-    // a =cin.get();
-    // cout <<"value of a is: "<<a << endl;
+    int a,b;
+    a =cin.get();
+    cout <<"value of a is: "<<a << endl; 
 
-    int a;
-    cout<<"enter the value of a"<<endl;
-    cin>>a; 
+    // int a;
+    // cout<<"enter the value of a"<<endl;
+    // cin>>a; 
     
 
     return 0;
