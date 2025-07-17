@@ -174,6 +174,7 @@
 //     cin>>n;
 //     int i=1;
 //     char ch = 'A'; 
+//     cout<<ch<<endl;
 //     while(i<=n){
 //         int j=1;
 //         while(j<=n){
@@ -505,4 +506,72 @@
 
 //     return 0;
 // }
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Dialpad
+//  #include <iostream>
+// using namespace std;
+// int main(){
+//     int n;
+//     cin>>n;
+//     int count =1;
+//     int i =1;
+//     while(i<=3){
+//         int j=1;
+//         int k =3;
+//         while(j<=k){
+//             cout<< count<<" ";
+//             count ++;
+//             j++;
+//         }
+//         cout<< endl; 
+//         i++;
+//     }
+
+//     return 0;
+// }
+// -------------------------alphabet pattern
+// #include <iostream>
+// using namespace std;
+// int main(){
+//     int n;
+//     cin>>n;
+//     int  i = 1;
+//     while(i<=n){
+//         int  j = 1;
+//         while(j<=i){
+//             char ch = 'A'+i-2+j;
+//             cout<<ch<<" ";
+//             j++;
+//         }
+//         i++;
+//         cout<<endl;
+//     }
+//     return 0;
+// }
+// ----------- pattern 
+#include <iostream>
+using namespace std;
+int main(){
+    int n;
+    cin>>n;
+    int i = 1;
+    while(i<=n){
+        int  j = n-i;
+        while(j){
+            cout<<"*"<<" ";
+            j--;
+        }
+        int k = 1;
+        while(k<=i){
+            cout<<k<<" ";
+            k++;
+
+        }
+        int  l = i-1;
+        while(l){
+            cout<<l<<" ";
+            l--;
+        }
+        i++;
+        cout<<endl;
+    }
+}
