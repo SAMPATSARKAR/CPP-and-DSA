@@ -2,7 +2,7 @@
 
 This repository contains my coding practice files for:
 
-- ✅ C and C++
+- ✅ C++
 - ✅ Data Structures & Algorithms
 - ✅ Recursion, loops, conditionals, etc.
 
