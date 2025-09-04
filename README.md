@@ -11,8 +11,9 @@ This repository contains my coding practice files for:
 - `/recursion` → problems like factorial, power, etc.
 - `/loops` → while, for loop examples
 - `/conditions` → if-else, switch-case, etc.
+- `many-more`
 
 ## 👨‍💻 Author
 
 - **Sampat Sarkar**
-- Practicing DSA and Web Dev 🚀
+- Practicing DSA 🚀
