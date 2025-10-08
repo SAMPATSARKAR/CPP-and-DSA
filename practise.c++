@@ -16,6 +16,7 @@ int main(){
             col1++;
         }
         int col2=1;
+        int col2=1;
         while(col2<=i-1){
             cout<<"*"<<" ";
             col2++;
