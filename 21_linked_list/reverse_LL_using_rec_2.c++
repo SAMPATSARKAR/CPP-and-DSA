@@ -18,22 +18,6 @@ class node{
         }
     }
 };
-node* reverse(node* head){
-    if(head == NULL || head->next == NULL){
-        cout<<"No LL to reverse"<<endl;
-        return head;
-    }
-    node* prev = NULL;
-    node* curr = head;
-    node* forward = NULL;
-    while(curr != NULL){
-        forward = curr->next;
-        curr->next = prev;
-        prev = curr;
-        curr = forward;
-    }
-    return prev;
-}
 void insertAtHead(node* &tail,node* &head,int d){
     //insert at head
     if(head == NULL){
@@ -85,7 +69,7 @@ void insertAtPosition(node* &tail,node* &head,int position,int d){
     node* nodeToInsert = new node(d);
     nodeToInsert->next = temp->next;
     temp->next = nodeToInsert;
-        
+    
 }
 void print(node* &head){
     node* temp = head;
@@ -95,7 +79,23 @@ void print(node* &head){
 
     }
     cout<<endl;
-
+    
+}
+node* reverse(node* head){
+    if(head == NULL || head->next == NULL){
+        cout<<"No LL to reverse"<<endl;
+        return head;
+    }
+    node* prev = NULL;
+    node* curr = head;
+    node* forward = NULL;
+    while(curr != NULL){
+        forward = curr->next;
+        curr->next = prev;
+        prev = curr;
+        curr = forward;
+    }
+    return prev;
 }
 node* reverse1(node* &head){
     if(head == NULL || head->next == NULL){
@@ -105,6 +105,16 @@ node* reverse1(node* &head){
     head->next->next = head;
     head->next = NULL;
     return chotaHead;
+}
+void reverse3(node* &head,node* curr,node* prev){
+    //base case
+    if(curr == NULL){
+        head = prev;
+        return;
+    }
+    node* forward = curr->next;
+    reverse(head,forward,curr);
+    curr->next = prev;
 }
 int main(){
     node* head = NULL;
