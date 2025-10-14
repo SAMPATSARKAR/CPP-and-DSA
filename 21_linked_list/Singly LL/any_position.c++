@@ -16,7 +16,7 @@ class node{
             delete next;
             this->next = NULL;
         }
-        cout<<"memory is free from node with data"<<value<<endl;
+        cout<<"memory is free from node with data "<<value<<endl;
     }
 };
 
@@ -25,6 +25,7 @@ void insertAtHead(node* &head,int d){
     temp->next = head;
     head = temp;
 };
+
 
 void insertAtTail(node* &tail,int d){
     node* temp = new node(d);
@@ -43,6 +44,11 @@ void insertAtPosition(node* &head, node* &tail, int position,int d){
     while(cnt<position-1){
         temp = temp->next;
         cnt++;
+    }
+    if (temp == NULL) {
+        cout << "⚠️ Invalid position " << position << ", inserting at tail.\n";
+        insertAtTail(tail, d);
+        return;
     }
     if(temp->next == NULL){
         insertAtTail(tail,d);
@@ -99,8 +105,10 @@ int main(){
     print(head);
     insertAtPosition(head,tail,3,30);
     print(head);
-    insertAtPosition(head,tail,4,30);
+    insertAtPosition(head,tail,4,40);
     print(head);
-    insertAtPosition(head,tail,6,30);
+    insertAtPosition(head,tail,6,50);
+    print(head);
+    deleteNode(2,head);
     print(head);
 }
