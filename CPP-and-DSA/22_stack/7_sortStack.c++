@@ -23,5 +23,17 @@ void sortStack(stack<int>& stack){
     sortInsert(stack,num);
 };
 int main(){
-    
+    stack<int> a;
+    a.push(3);
+    a.push(5);
+    a.push(8);
+    a.push(7);
+    a.push(6);
+    a.push(70);
+    a.push(100);
+    sortStack(a);
+    while(!a.empty()){
+        cout<<a.top()<<endl;
+        a.pop();
+    }
 }
