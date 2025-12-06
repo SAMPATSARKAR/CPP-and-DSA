@@ -82,37 +82,34 @@ void print(node* head) {
 }
 
 // Reverse in groups of k
-node* kreverse(node* head, int k) {
-    if (head == NULL) 
+node* floyddetectLoop(node* head){
+    if(head == NULL){
         return NULL;
-
-    node* curr = head;
-    node* prev = NULL;
-    node* next = NULL;
-    int count = 0;
-
-    // Step 1: Reverse first k nodes
-    while (curr != NULL && count < k) {
-        next = curr->next;
-        curr->next = prev;
-        prev = curr;
-        curr = next;
-        count++;
     }
-
-    // Step 2: Recursively reverse remaining list
-    if (next != NULL) {
-        head->next = kreverse(next, k);
+    node* slow = head;
+    node* fast = head;
+    while(slow!=NULL && fast!=NULL){
+        fast = fast->next;
+        if(fast != NULL){
+            fast = fast->next;
+        }
+        slow = slow->next;
+        if(slow == fast){
+            return slow;
+        }
     }
-
-    // Step 3: prev becomes new head of the reversed group
-    return prev;
+    return NULL;
 }
 
 int main() {
     node* head = NULL;
     node* tail = NULL;
 
+    if(floyddetectLoop(head)){
+        cout<<"Loop exist"<<endl;
+    }else{
+        cout<<"Loop doesnot exist"<<endl;
+    }
     insertAtTail(tail, head, 10);
     insertAtTail(tail, head, 20);
     insertAtTail(tail, head, 30);
@@ -120,14 +117,12 @@ int main() {
     insertAtTail(tail, head, 50);
     insertAtTail(tail, head, 60);
     insertAtTail(tail, head, 70);
+    tail->next = head->next;
 
-    cout << "Original Linked List: ";
-    print(head);
-
-    head = kreverse(head, 2);
-
-    cout << "After k=2 reverse: ";
-    print(head);
-
+    if(floyddetectLoop(head)!=NULL){
+        cout<<"Loop exist"<<endl;
+    }else{
+        cout<<"Loop doesnot exist"<<endl;
+    }
     return 0;
 }
